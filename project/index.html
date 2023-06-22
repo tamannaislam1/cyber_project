@@ -69,5 +69,16 @@
 
     <!-- Include the CryptoJS library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+    <p>AES Algorithm Overview:
+      The AES algorithm consists of several steps that are performed iteratively to encrypt or decrypt data. The main steps involved are:
+      
+      Key Expansion: Generates a set of round keys based on the initial encryption key provided by the user.
+      SubBytes: Replaces each byte of the input data with a corresponding byte from a substitution table (S-box).
+      ShiftRows: Shifts the rows of the data matrix to create diffusion.
+      MixColumns: Mixes the columns of the data matrix using a matrix multiplication operation.
+      AddRoundKey: Performs a bitwise XOR operation between the data matrix and the round key.
+      Encryption Process: Combines the above steps in a specified number of rounds.
+      Decryption Process: Performs the inverse operations of the encryption process to retrieve the original data.</p>
   </body>
 </html>
