@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>AES encryption and decryption</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>AES Encryption and Decryption</h2>
+      <div class="msgInp">
+        <label for="input">Enter a message:</label>
+        <textarea id="input" placeholder="Enter your message here"></textarea>
+        <label for="key">Enter a secret key (16 bytes):</label>
+        <input type="text" id="key" placeholder="Enter your key here" />
+        <button onclick="encrypt()">Encrypt</button>
+      </div>
+
+      <div class="msgOutput">
+        <div class="encrypted">
+          <label for="encrypted">Encrypted message:</label>
+          <textarea id="encrypted" readonly></textarea>
+          <button onclick="decrypt()">Decrypt</button>
+        </div>
+
+        <div class="decrypted">
+          <label for="decrypted">Decrypted message:</label>
+          <textarea id="decrypted" readonly></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // AES encryption and decryption functions
+
+      // AES encryption
+      function encrypt() {
+        var message = document.getElementById("input").value;
+        var key = document.getElementById("key").value;
+
+        if (key.length !== 16) {
+          alert("Key must be 16 bytes (128 bits) long.");
+          return;
+        }
+
+        var encrypted = CryptoJS.AES.encrypt(message, key).toString();
+        document.getElementById("encrypted").value = encrypted;
+      }
+
+      // AES decryption
+      function decrypt() {
+        var encrypted = document.getElementById("encrypted").value;
+        var key = document.getElementById("key").value;
+
+        if (key.length !== 16) {
+          alert("Key must be 16 bytes (128 bits) long.");
+          return;
+        }
+
+        var decrypted = CryptoJS.AES.decrypt(encrypted, key).toString(
+          CryptoJS.enc.Utf8
+        );
+        document.getElementById("decrypted").value = decrypted;
+      }
+    </script>
+
+    <!-- Include the CryptoJS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #eff4cb;
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.msgInp {
+  width: 406px;
+  margin: auto;
+}
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+textarea {
+  width: 380px;
+  height: 100px;
+  background-color: transparent;
+  outline: 0;
+}
+
+input {
+  background-color: transparent;
+  height: 30px;
+  width: 300px;
+  outline: none;
+  border: 1px solid gray;
+}
+
+button {
+  padding: 8px 15px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #5cc080;
+  cursor: pointer;
+}
+
+.msgOutput {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 30px;
+}
